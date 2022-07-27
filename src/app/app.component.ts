@@ -29,21 +29,13 @@ export class AppComponent {
   // }
 
   /**
-   *
+   * @SkipSelf() : Parameter decorator to be used on constructor parameters, which tells the DI framework to start dependency resolution from the parent injector. Resolution works upward through the injector hierarchy, so the local injector is not checked for a provider.
    */
-  constructor(
-    @Self() private loggingService: LoggingService, //used local provider here.
-    @SkipSelf() private parentSerivce: LoggingService //using node provider in parent
-  ) {
-    if (this.loggingService) {
-      this.loggingService.prefix = 'from component provider';
-      this.loggingService.log('Constructor Init!');
-    }
-    if(this.parentSerivce){
-      this.loggingService.prefix = 'from service provider';
-      this.loggingService.log('Constructor Init!');
-    }
-  }
-
+  // constructor(@SkipSelf() private parentService: LoggingService) {
+  //   if(this.parentService)
+  //   {
+  //     this.parentService.log("Constructor Init!")
+  //   }
+  // }
   title = 'Dependency Injection Tutorial';
 }

@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LoggingService } from './logging.service';
+import { ParentDirective } from './parent.directive';
+import { ChildDirective } from './child.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParentDirective,
+    ChildDirective
   ],
   imports: [
     BrowserModule
